@@ -64,7 +64,7 @@ resource "aws_autoscaling_group" "bull_asg_front_end" {
 
   vpc_zone_identifier       = [aws_subnet.app.id, aws_subnet.app1.id]
 
-  target_group_arns = [aws_lb_target_group.bull-front-end-tg.arn]
+  target_group_arns = [aws_lb_target_group.bull_front_end_tg.arn]
                        
   lifecycle {
     create_before_destroy = true
@@ -91,7 +91,7 @@ resource "aws_autoscaling_group" "bull_asg_back_end" {
 
   vpc_zone_identifier       = [aws_subnet.app.id, aws_subnet.app1.id]
 
-  target_group_arns = [aws_lb_target_group.bull-back-end-tg.arn]
+  target_group_arns = [aws_lb_target_group.bull_back_end_tg.arn]
                        
   lifecycle {
     create_before_destroy = true
