@@ -8,7 +8,7 @@ resource "aws_security_group" "bull_ec_sg" {
     from_port        = 6379
     to_port          = 6379
     protocol         = "tcp"
-    security_group   = [aws_security_group.bull_asg_sg.id]
+    security_groups   = [aws_security_group.bull_asg_sg.id]
    
   }
 
